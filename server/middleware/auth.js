@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtokens");
+const jwt = require("jsonwebtoken");
 
 //checks token and sets req.user
 exports.protect = (req,res,next) => {

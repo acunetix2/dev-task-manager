@@ -1,5 +1,5 @@
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtokens");
+const jwt = require("jsonwebtoken");
 const User =  require("../models/User");
 
 //Signup   Endpoint Logic
