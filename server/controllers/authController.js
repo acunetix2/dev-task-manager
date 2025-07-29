@@ -12,7 +12,7 @@ exports.signup = async (req,res) => {
     const user = await User.create({email, password: hashed});
 
     const token = jwt.sign({id: user._id, role: user.role}, process.env.JWT_SECRET, {expiresIn: '1h'});
-    res.json(token); //signup then automatic login purpose: UX
+    res.json({ token }); //signup then automatic login purpose: UX
 
 };
 
@@ -27,5 +27,5 @@ exports.login = async (req,res) => {
     if (!match) return res.status(401).json({message: "incorrect password"});
 
     const token = jwt.sign({id: user._id, role: user.role}, process.env.JWT_SECRET,{expiresIn: '1h'});
-    res.json(token);
+    res.json({ token });
 }

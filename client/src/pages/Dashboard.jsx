@@ -20,19 +20,23 @@ export default function Dashboard() {
   fetchTasks();
 }, []);
 
+
+
   const createTask = async (payload) => {
     const res = await API.post("/tasks", payload);
     setTasks((prev) => [res.data, ...prev]);
-    Toaster("Task created ✔️" );
+    Toaster({ title: "Task created ✔️" });
   };
 
   const toggleTask = async (id) => {
-    const task = tasks.find((t) => t._id === id);
+    const task = await tasks.find((t) => t._id === id);
+    if (!task) return console.error("Task not found");
     const res = await API.put(`/tasks/${id}`, { completed: !task.completed });
     setTasks((prev) => prev.map((t) => (t._id === id ? res.data : t)));
   };
 
-  const deleteTask = async (id) => {
+  const deleteTask = async (id) => 
+    {
     await API.delete(`/tasks/${id}`);
     setTasks((prev) => prev.filter((t) => t._id !== id));
     Toaster({ title: "Task deleted 🗑️" });
@@ -63,6 +67,10 @@ export default function Dashboard() {
           ))}
         </section>
       </main>
+
+      <footer className="fixed bottom-0 left-0 w-full bg-gray-600 text-center text-sm text-orange-600 py-4 border-t">
+        &copy; {new Date().getFullYear()} Dev Task Manager | All rights reserved.
+      </footer>
     </>
   );
 }
