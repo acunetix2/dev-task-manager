@@ -68,7 +68,7 @@ export default function Dashboard() {
         </section>
       </main>
 
-      <footer className="fixed bottom-0 left-0 w-full bg-gray-600 text-center text-sm text-orange-600 py-4 border-t">
+      <footer className="fixed bottom-0 left-0 w-full bg-gray-900 text-center text-sm text-orange-600 py-4 border-t">
         &copy; {new Date().getFullYear()} Dev Task Manager | All rights reserved.
       </footer>
     </>

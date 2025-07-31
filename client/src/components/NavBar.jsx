@@ -16,8 +16,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="glass sticky top-0 z-50 border-b border-zinc-200 dark:border-zinc-700 p-4 flex justify-between items-center">
-      <Link to="/dashboard" className="font-bold text-lg text-orange-500">
+    <nav className="glass sticky top-0 z-50 border-b border-zinc-200 dark:border-zinc-700 bg-blue-300 p-4 flex justify-between items-center">
+      <Link to="/dashboard" className="font-bold text-lg text-orange-600">
         Dev Task Manager
       </Link>
 

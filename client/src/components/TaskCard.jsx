@@ -11,15 +11,15 @@ export default function TaskCard({ task, onToggle, onDelete }) {
     >
       <CardHeader>
         <CardTitle
-          className={`text-lg font-semibold ${
-            task.completed ? "line-through text-zinc-400" : ""
+          className={`text-lg font-bold ${
+            task.completed ? "line-through text-green-400" : ""
           }`}
         >
           {task.title}
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-sm dark:text-zinc-300">{task.description}</p>
+        <p className="text-sm dark:text-blue-300">{task.description}</p>
       </CardContent>
       <CardFooter className="flex justify-end gap-2">
         <Button
@@ -27,7 +27,7 @@ export default function TaskCard({ task, onToggle, onDelete }) {
           variant={task.completed ? "outline" : "secondary"}
           onClick={() => onToggle(task._id)}
         >
-          <CheckCircleIcon className="h-5 w-5" />
+          <CheckCircleIcon className="h-5 w-5 bg-green-500" />
         </Button>
         <Button
           size="icon"
