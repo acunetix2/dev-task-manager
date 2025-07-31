@@ -12,7 +12,7 @@ export default function TaskCard({ task, onToggle, onDelete }) {
       <CardHeader>
         <CardTitle
           className={`text-lg font-bold ${
-            task.completed ? "line-through text-green-400" : ""
+            task.completed ? "text-green-400" : ""
           }`}
         >
           {task.title}
