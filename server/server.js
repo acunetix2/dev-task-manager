@@ -8,9 +8,16 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 
+// CORS Configuration
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || "*", // Use "*" for dev, actual URL for prod
+    credentials: true,
+  })
+);
+
 // Middleware
 app.use(express.json());
-app.use(cors());
 
 // Routes
 app.use("/api/auth", require("./routes/authRoutes"));
