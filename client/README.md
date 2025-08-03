@@ -1,12 +1,22 @@
-# React + Vite
+# MailInsight 🔐
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MailInsight is a browser extension and backend platform for real-time email threat detection, including:
+- Phishing detection
+- Spoofed sender warnings
+- Embedded threat analysis
+- Premium features and user login
 
-Currently, two official plugins are available:
+## 🔧 Tech Stack
+- Chrome Extension (HTML, JS, CSS)
+- Express.js + Node.js backend
+- MongoDB
+- JWT Auth
+- OpenAI API (for threat analysis)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Setup Instructions
+```bash
+git clone https://github.com/mailinsight/MailInsight.git
+cd MailInsight
+npm install
+cd backend
+npm install

@@ -15,7 +15,7 @@ export default function Privacy() {
         <h2 className="text-xl font-semibold mb-2">2. Data Storage</h2>
         <p className="text-gray-700 dark:text-gray-300">
           All data is stored securely in our database and only accessible by authenticated users.
-          We do not store passwords in plain text — they are hashed using strong encryption.
+          We do not store passwords in plain text they are hashed using strong encryption.
         </p>
       </section>
 

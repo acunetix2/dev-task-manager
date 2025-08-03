@@ -8,7 +8,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea"; // add via shadcn
+import { Textarea } from "@/components/ui/textarea"; 
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
