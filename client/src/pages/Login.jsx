@@ -63,6 +63,7 @@ export default function Login() {
         <Card className="w-full max-w-md shadow-xl rounded-2xl border border-zinc-200 dark:border-zinc-700">
           <CardHeader>
             <CardTitle className="text-center text-2xl font-bold text-zinc-800 dark:text-white">
+			TaskBoard <br>
               Sign in
             </CardTitle>
           </CardHeader>
