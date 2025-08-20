@@ -61,10 +61,15 @@ export default function Login() {
       {/* Right Section - Login Form */}
       <div className="flex flex-1 items-center justify-center bg-white dark:bg-zinc-900 px-6">
         <Card className="w-full max-w-md shadow-xl rounded-2xl border border-zinc-200 dark:border-zinc-700">
-          <CardHeader>
+          <CardHeader className="flex flex-col items-center gap-3">
+            {/* TaskBoard Logo */}
+            <img
+              src="/logo.png" // 👉 place your TaskBoard logo inside public/logo.png
+              alt="TaskBoard Logo"
+              className="w-14 h-14 object-contain"
+            />
             <CardTitle className="text-center text-2xl font-bold text-zinc-800 dark:text-white">
-			TaskBoard 
-              Sign in
+              TaskBoard Sign in
             </CardTitle>
           </CardHeader>
 
