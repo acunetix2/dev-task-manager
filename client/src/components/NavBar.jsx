@@ -15,6 +15,8 @@ export default function Navbar() {
     window.location.href = "/login";
   };
 
+
+
   const navLinkClass = ({ isActive }) =>
     `text-sm px-3 py-2 rounded-md font-medium ${
       isActive

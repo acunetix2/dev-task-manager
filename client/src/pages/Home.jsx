@@ -20,7 +20,7 @@ export default function Home() {
   const createTask = async (payload) => {
     const res = await API.post("/tasks", payload);
     setTasks((prev) => [res.data, ...prev]);
-    Toaster({ title: "Task created ✔️" });
+    Toaster({ title: "Task created successfully" });
   };
 
   const toggleTask = async (id) => {
@@ -33,7 +33,7 @@ export default function Home() {
   const deleteTask = async (id) => {
     await API.delete(`/tasks/${id}`);
     setTasks((prev) => prev.filter((t) => t._id !== id));
-    Toaster({ title: "Task deleted 🗑️" });
+    Toaster({ title: "Task deleted " });
   };
 
   const activeTasks = tasks.filter((t) => !t.completed);
