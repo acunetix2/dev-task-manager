@@ -44,11 +44,11 @@ export default function Login() {
         }}
       >
         <h1 className="text-5xl font-extrabold mb-4 drop-shadow-lg">
-          Welcome Back
+          Welcome Back to TaskBoard
         </h1>
         <p className="max-w-md text-lg text-white/90 drop-shadow-md">
           Manage your tasks, stay productive, and track progress with{" "}
-          <span className="font-semibold">Dev Task Manager</span>.
+          <span className="font-semibold">TaskBoard</span>.
         </p>
         <div className="flex gap-6 mt-8 text-xl">
           <i className="fa-brands fa-facebook hover:text-blue-400 cursor-pointer"></i>
@@ -95,12 +95,12 @@ export default function Login() {
                 to="/forgot-password"
                 className="text-blue-600 hover:underline dark:text-blue-400"
               >
-                Lost your password?
+                Forgot password?
               </Link>
             </div>
           </CardContent>
 
-          <CardFooter className="px-6 pb-6">
+          <CardFooter className="flex flex-col gap-4 px-6 pb-6">
             <Button
               onClick={handleLogin}
               disabled={loading}
@@ -108,6 +108,17 @@ export default function Login() {
             >
               {loading ? "Logging In..." : "Sign in now"}
             </Button>
+
+            {/* 👉 Signup Button */}
+            <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
+              Don’t have an account?{" "}
+              <Link
+                to="/signup"
+                className="font-semibold text-blue-600 hover:underline dark:text-blue-400"
+              >
+                Create an Account
+              </Link>
+            </p>
           </CardFooter>
 
           <p className="text-xs text-center text-zinc-500 dark:text-zinc-400 px-6 pb-6">
