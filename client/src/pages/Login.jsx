@@ -122,7 +122,7 @@ export default function Login() {
                 to="/signup"
                 className="font-semibold text-blue-600 hover:underline dark:text-blue-400"
               >
-                Create one
+                Create an Account
               </Link>
             </p>
           </CardFooter>
