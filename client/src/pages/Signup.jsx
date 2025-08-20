@@ -82,7 +82,13 @@ export default function Signup() {
       {/* Right Section - Signup Form */}
       <div className="flex flex-1 items-center justify-center bg-white dark:bg-zinc-900 px-6">
         <Card className="w-full max-w-md shadow-xl rounded-2xl border border-zinc-200 dark:border-zinc-700">
-          <CardHeader>
+          <CardHeader className="flex flex-col items-center">
+            {/* Logo on top */}
+            <img
+              src="/logo.png"
+              alt="TaskBoard Logo"
+              className="h-12 w-12 mb-2"
+            />
             <CardTitle className="text-center text-2xl font-bold text-zinc-800 dark:text-white">
               Create Account
             </CardTitle>
