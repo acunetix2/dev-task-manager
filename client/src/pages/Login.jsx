@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,8 +10,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import API from "../services/api";
-import { Link } from "react-router-dom";
-import { Mail, Lock } from "lucide-react"; // icons
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -36,89 +34,101 @@ export default function Login() {
   };
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 dark:from-zinc-900 dark:via-zinc-950 dark:to-black px-4">
-      {/* Floating animated background blobs */}
-      <div className="absolute -top-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl animate-ping"></div>
-
-      <Card className="relative z-10 w-full max-w-md rounded-3xl border border-white/20 dark:border-zinc-700/40 bg-white/70 dark:bg-zinc-900/80 backdrop-blur-xl shadow-2xl transition-transform duration-300 hover:scale-[1.01] animate-fade-in">
-        
-        {/* Logo / Avatar */}
-        <div className="flex justify-center -mt-12">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center shadow-lg">
-            <span className="text-white font-bold text-2xl">DT</span>
-          </div>
+    <div className="flex min-h-screen">
+      {/* Left Section - Welcome Text */}
+      <div
+        className="hidden md:flex flex-1 flex-col justify-center bg-cover bg-center px-12 text-white"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')",
+        }}
+      >
+        <h1 className="text-5xl font-extrabold mb-4 drop-shadow-lg">
+          Welcome Back
+        </h1>
+        <p className="max-w-md text-lg text-white/90 drop-shadow-md">
+          Manage your tasks, stay productive, and track progress with{" "}
+          <span className="font-semibold">Dev Task Manager</span>.
+        </p>
+        <div className="flex gap-6 mt-8 text-xl">
+          <i className="fa-brands fa-facebook hover:text-blue-400 cursor-pointer"></i>
+          <i className="fa-brands fa-twitter hover:text-sky-400 cursor-pointer"></i>
+          <i className="fa-brands fa-instagram hover:text-pink-400 cursor-pointer"></i>
+          <i className="fa-brands fa-github hover:text-gray-300 cursor-pointer"></i>
         </div>
+      </div>
 
-        <CardHeader>
-          <CardTitle className="text-center text-2xl font-extrabold text-zinc-800 dark:text-white tracking-tight">
-            Hi, Welcome Back 👋
-            <p className="mt-1 text-sm font-medium text-zinc-500 dark:text-zinc-400">
-              Dev Task Manager
-            </p>
-          </CardTitle>
-        </CardHeader>
+      {/* Right Section - Login Form */}
+      <div className="flex flex-1 items-center justify-center bg-white dark:bg-zinc-900 px-6">
+        <Card className="w-full max-w-md shadow-xl rounded-2xl border border-zinc-200 dark:border-zinc-700">
+          <CardHeader>
+            <CardTitle className="text-center text-2xl font-bold text-zinc-800 dark:text-white">
+              Sign in
+            </CardTitle>
+          </CardHeader>
 
-        <CardContent className="space-y-5 px-6">
-          {/* Email input with icon */}
-          <div className="relative">
-            <Mail className="absolute left-3 top-3.5 h-5 w-5 text-zinc-400" />
+          <CardContent className="space-y-5 px-6">
             <Input
               type="email"
               placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="pl-10 py-3 px-4 rounded-2xl border border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 transition-all"
+              className="py-3 px-4 rounded-xl border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 transition-all"
             />
-          </div>
-
-          {/* Password input with icon */}
-          <div className="relative">
-            <Lock className="absolute left-3 top-3.5 h-5 w-5 text-zinc-400" />
             <Input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="pl-10 py-3 px-4 rounded-2xl border border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 transition-all"
+              className="py-3 px-4 rounded-xl border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 transition-all"
             />
-          </div>
 
-          {/* Forgot Password */}
-          <div className="flex justify-end">
-            <Link
-              to="/forgot-password"
-              className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
+            <div className="flex items-center justify-between text-sm">
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 dark:border-zinc-600"
+                />
+                Remember Me
+              </label>
+              <Link
+                to="/forgot-password"
+                className="text-blue-600 hover:underline dark:text-blue-400"
+              >
+                Lost your password?
+              </Link>
+            </div>
+          </CardContent>
+
+          <CardFooter className="px-6 pb-6">
+            <Button
+              onClick={handleLogin}
+              disabled={loading}
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium shadow-md hover:shadow-lg transition-all"
             >
-              Forgot Password?
+              {loading ? "Logging In..." : "Sign in now"}
+            </Button>
+          </CardFooter>
+
+          <p className="text-xs text-center text-zinc-500 dark:text-zinc-400 px-6 pb-6">
+            By clicking on “Sign in now” you agree to our{" "}
+            <Link
+              to="/terms"
+              className="underline hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              Terms of Service
+            </Link>{" "}
+            &{" "}
+            <Link
+              to="/privacy"
+              className="underline hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              Privacy Policy
             </Link>
-          </div>
-        </CardContent>
-
-        <CardFooter className="px-6 pb-6">
-          <Button
-            onClick={handleLogin}
-            disabled={loading}
-            className="w-full py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium tracking-wide shadow-md hover:shadow-lg transition-all"
-          >
-            {loading ? "Logging In..." : "Log In"}
-          </Button>
-        </CardFooter>
-
-        <p className="text-sm text-center text-zinc-600 dark:text-zinc-400 pb-3">
-          Don’t have an account?{" "}
-          <Link
-            to="/signup"
-            className="text-blue-600 dark:text-blue-400 font-medium hover:underline"
-          >
-            Sign Up
-          </Link>
-        </p>
-
-        <p className="text-xs text-center text-zinc-500 dark:text-zinc-500 pb-6">
-          &copy; {new Date().getFullYear()} Dev Task Manager. All rights reserved.
-        </p>
-      </Card>
+            .
+          </p>
+        </Card>
+      </div>
     </div>
   );
 }
