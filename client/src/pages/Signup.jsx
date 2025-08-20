@@ -71,30 +71,24 @@ export default function Signup() {
           Collaborate, organize, and boost your productivity with{" "}
           <span className="font-semibold">TaskBoard</span>.
         </p>
-        <div className="flex gap-6 mt-8 text-xl">
-          <i className="fa-brands fa-facebook hover:text-blue-400 cursor-pointer"></i>
-          <i className="fa-brands fa-twitter hover:text-sky-400 cursor-pointer"></i>
-          <i className="fa-brands fa-instagram hover:text-pink-400 cursor-pointer"></i>
-          <i className="fa-brands fa-github hover:text-gray-300 cursor-pointer"></i>
-        </div>
       </div>
 
       {/* Right Section - Signup Form */}
       <div className="flex flex-1 items-center justify-center bg-white dark:bg-zinc-900 px-6">
         <Card className="w-full max-w-md shadow-xl rounded-2xl border border-zinc-200 dark:border-zinc-700">
-          <CardHeader className="flex flex-col items-center">
+          <CardHeader className="flex flex-col items-center gap-3">
             {/* Logo on top */}
             <img
               src="/logo.png"
               alt="TaskBoard Logo"
-              className="h-12 w-12 mb-2"
+              className="h-12 w-12 object-contain"
             />
             <CardTitle className="text-center text-2xl font-bold text-zinc-800 dark:text-white">
               Create Account
             </CardTitle>
           </CardHeader>
 
-          <CardContent className="space-y-5 px-6">
+          <CardContent className="space-y-4 px-6">
             <Input
               type="email"
               placeholder="Email Address"
@@ -118,7 +112,7 @@ export default function Signup() {
             />
 
             {error && (
-              <p className="text-sm text-red-500 font-medium mt-1">{error}</p>
+              <p className="text-sm text-red-500 font-medium">{error}</p>
             )}
           </CardContent>
 

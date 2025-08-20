@@ -59,38 +59,38 @@ export default function Login() {
       </div>
 
       {/* Right Section - Login Form */}
-      <div className="flex flex-1 items-center justify-center bg-white dark:bg-zinc-900 px-6">
-        <Card className="w-full max-w-md shadow-xl rounded-2xl border border-zinc-200 dark:border-zinc-700">
-          <CardHeader className="flex flex-col items-center gap-3">
+      <div className="flex flex-1 items-center justify-center bg-white dark:bg-zinc-900 px-4">
+        <Card className="w-full max-w-sm shadow-lg rounded-xl border border-zinc-200 dark:border-zinc-700">
+          <CardHeader className="flex flex-col items-center gap-2">
             {/* TaskBoard Logo */}
             <img
-              src="/logo.png" // 👉 place your TaskBoard logo inside public/logo.png
+              src="/logo.png"
               alt="TaskBoard Logo"
-              className="w-14 h-14 object-contain"
+              className="w-12 h-12 object-contain"
             />
-            <CardTitle className="text-center text-2xl font-bold text-zinc-800 dark:text-white">
+            <CardTitle className="text-center text-xl font-bold text-zinc-800 dark:text-white">
               TaskBoard Sign in
             </CardTitle>
           </CardHeader>
 
-          <CardContent className="space-y-5 px-6">
+          <CardContent className="space-y-3 px-4">
             <Input
               type="email"
               placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="py-3 px-4 rounded-xl border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 transition-all"
+              className="py-2.5 px-3 rounded-lg border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-all"
             />
             <Input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="py-3 px-4 rounded-xl border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 transition-all"
+              className="py-2.5 px-3 rounded-lg border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-all"
             />
 
-            <div className="flex items-center justify-between text-sm">
-              <label className="flex items-center gap-2">
+            <div className="flex items-center justify-between text-xs">
+              <label className="flex items-center gap-1.5">
                 <input
                   type="checkbox"
                   className="rounded border-gray-300 dark:border-zinc-600"
@@ -106,29 +106,29 @@ export default function Login() {
             </div>
           </CardContent>
 
-          <CardFooter className="flex flex-col gap-4 px-6 pb-6">
+          <CardFooter className="flex flex-col gap-3 px-4 pb-4">
             <Button
               onClick={handleLogin}
               disabled={loading}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium shadow-md hover:shadow-lg transition-all"
+              className="w-full py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium shadow-md hover:shadow-lg transition-all"
             >
-              {loading ? "Logging In..." : "Sign in now"}
+              {loading ? "Logging In..." : "Sign in"}
             </Button>
 
             {/* 👉 Signup Button */}
-            <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="text-center text-xs text-zinc-600 dark:text-zinc-400">
               Don’t have an account?{" "}
               <Link
                 to="/signup"
                 className="font-semibold text-blue-600 hover:underline dark:text-blue-400"
               >
-                Create an Account
+                Create one
               </Link>
             </p>
           </CardFooter>
 
-          <p className="text-xs text-center text-zinc-500 dark:text-zinc-400 px-6 pb-6">
-            By clicking on “Sign in now” you agree to our{" "}
+          <p className="text-[11px] text-center text-zinc-500 dark:text-zinc-400 px-4 pb-4">
+            By clicking on “Sign in” you agree to our{" "}
             <Link
               to="/terms"
               className="underline hover:text-blue-600 dark:hover:text-blue-400"
